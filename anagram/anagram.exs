@@ -1,8 +1,6 @@
 defmodule Anagram do
   def match(word, list) do
-    Enum.filter list, fn(candidate) ->
-      is_anagram?(word, candidate)
-    end
+    Enum.filter list, is_anagram?(word, &1)
   end
 
   defp is_anagram?("", ""), do: true
